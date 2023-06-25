@@ -59,12 +59,14 @@ export default function Header({ isSignedIn, onSignOut }) {
 
   const onClick = () => {
     if (isSignedIn && onSignOut) {
+      alert('You are signed out!');
       onSignOut();
     }
   };
 
   return (
     <React.Fragment>
+      {JSON.stringify(isSignedIn)}
       <AppBar
         position="static"
         color="default"
@@ -79,7 +81,7 @@ export default function Header({ isSignedIn, onSignOut }) {
             component={RouterLink}
             to="/"
           >
-            App
+            AppBar
           </Typography>
           <Button
             color="primary"
